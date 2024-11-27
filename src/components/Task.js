@@ -25,4 +25,4 @@ function Task({ taskHeader, taskDesk, taskId, removeTask, addCompletedTask, task
     );
   }
   
-  export default Task;
+export default Task;
