@@ -1,8 +1,8 @@
 import { useState } from "react";
+import AuthProvider from "../hooks/AuthProvider";
 import "../styles/App.css";
 import NewTask from "../components/NewTask";
 import Task from "../components/Task";
-import Navbar from "../components/Navbar";
 
 
 function HomePage() {
@@ -24,9 +24,8 @@ function HomePage() {
   }
 
   return (
-    <>
-        <Navbar />
-        <h1>Hello</h1>
+    <AuthProvider>
+      <>
         <NewTask addTask={addTask} />
         <p>------------------------</p>
         {tasks.map((task, index) => (
@@ -50,6 +49,7 @@ function HomePage() {
             />
         ))}
     </>
+    </AuthProvider>
   );
 }
 

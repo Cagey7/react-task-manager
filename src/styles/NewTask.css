@@ -1,0 +1,26 @@
+.main-new-task-container {
+    background-color: rgb(204, 217, 252);
+}
+
+
+.task-header-name {
+    color: grey;
+}
+
+
+.task-desc-name {
+    color: grey;
+}
+
+
+.task-header-input {
+    width: 90%;
+    height: 2.5em;
+}
+
+
+.task-desc-input {
+    width: 90%;
+    height: 5em;
+}
+
