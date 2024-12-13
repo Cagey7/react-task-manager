@@ -3,6 +3,7 @@ import AuthProvider from "../hooks/AuthProvider";
 import "../styles/App.css";
 import NewTask from "../components/NewTask";
 import Task from "../components/Task";
+import "../styles/HomePage.css"
 
 
 function HomePage() {
@@ -27,27 +28,30 @@ function HomePage() {
     <AuthProvider>
       <>
         <NewTask addTask={addTask} />
-        <p>------------------------</p>
-        {tasks.map((task, index) => (
-            <Task
-            taskId={index}
-            taskHeader={task.task_header}
-            taskDesk={task.task_desk}
-            removeTask={removeTask}
-            addCompletedTask={addCompletedTask}
-            taskStatus="in_process"
-            />
-        ))}
-        <p>------------------------</p>
-        <p>Выполненные задания</p>
-        {CompletedTask.map((task, index) => (
-            <Task
-            taskId={index}
-            taskHeader={task.task_header}
-            taskDesk={task.task_desk}
-            taskStatus="completed"
-            />
-        ))}
+        <div className="user-task-list">
+          {tasks.map((task, index) => (
+              <Task
+              taskId={index}
+              taskHeader={task.task_header}
+              taskDesk={task.task_desk}
+              removeTask={removeTask}
+              addCompletedTask={addCompletedTask}
+              taskStatus="in_process"
+              />
+          ))}
+      </div>
+        <h3 class="complete-task-header">Выполненные задания</h3>
+        <div className="user-task-list">
+          {CompletedTask.map((task, index) => (
+              <Task
+              taskId={index}
+              taskHeader={task.task_header}
+              taskDesk={task.task_desk}
+              taskStatus="completed"
+              />
+          ))}
+        </div>
+
     </>
     </AuthProvider>
   );
